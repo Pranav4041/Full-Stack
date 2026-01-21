@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            transition: 0.3s;
+        }
+
+        /* Main frame */
+        .frame {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #020617;
+            border-radius: 12px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle {
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        /* Content layout */
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            flex: 1;
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Cards */
+        .cards {
+            flex: 3;
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        /* Light mode */
+        .light {
+            background-color: #f1f5f9;
+            color: black;
+        }
+
+        .light .frame {
+            background-color: #e2e8f0;
+        }
+
+        .light .nav,
+        .light .card {
+            background-color: white;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Responsive (simple) */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="frame">
+
+    <div class="header">
+        <h2>Admin Dashboard</h2>
+        <button class="toggle" onclick="toggleMode()">Toggle Mode</button>
+    </div>
+
+    <div class="content">
+        <div class="nav">Navigation</div>
+
+        <div class="cards">
+            <div class="card">Analytics</div>
+            <div class="card">Users</div>
+            <div class="card">Settings</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleMode() {
+        document.body.classList.toggle("light");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Banking App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #dbeafe;   
+        }
+
+        .box {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 3px solid #2563eb;   
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2563eb;              
+        }
+
+        .balance {
+            color: #16a34a;              
+            font-size: 18px;
+        }
+
+        input {
+            width: 90%;
+            padding: 6px;
+            border: 2px solid #9333ea;  
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 7px 12px;
+            margin: 6px;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .deposit {
+            background-color: #16a34a;   
+        }
+
+        .withdraw {
+            background-color: #dc2626;
+        }
+
+        #msg {
+            color: #1e3a8a;              
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Banking System</h2>
+
+    <p class="balance">Balance: ₹ <span id="balance">1000</span></p>
+
+    <input type="number" id="amount" placeholder="Enter amount">
+    <br><br>
+
+    <button class="deposit" onclick="deposit()">Deposit</button>
+    <button class="withdraw" onclick="withdraw()">Withdraw</button>
+
+    <p id="msg"></p>
+</div>
+
+<script>
+    let balance = 1000;
+
+    function deposit() {
+        let amt = Number(document.getElementById("amount").value);
+        balance = balance + amt;
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("msg").innerText = "Money Deposited";
+    }
+
+    function withdraw() {
+        let amt = Number(document.getElementById("amount").value);
+        balance = balance - amt;
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("msg").innerText = "Money Withdrawn";
+    }
+</script>
+
+</body>
+</html>
